@@ -72,7 +72,7 @@ GEM
       rouge
       rsvg2 (>= 3.1.4)
       rttool
-    rabbit-theme-wwinternalstyle (1.0.6)
+    rabbit-theme-wwinternalstyle (1.0.5)
       rabbit (>= 2.0.2)
     racc (1.7.1)
     rdtool (0.6.38)
@@ -93,7 +93,7 @@ PLATFORMS
 
 DEPENDENCIES
   rabbit
-  rabbit-theme-wwinternalstyle (= 1.0.6)
+  rabbit-theme-wwinternalstyle (= 1.0.5)
 
 RUBY VERSION
    ruby 3.2.2p53
