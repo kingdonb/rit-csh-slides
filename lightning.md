@@ -147,11 +147,12 @@ end
 * Partners in Industry - Building products on Flux
 * Companies have trusted Flux for years
 
-# Automation
+# Automations
 
-* ImageUpdateAutomation - great for small dev
-* SemVer Source Automation + Scalability ++ Security
-* Flagger for Progressive Delivery, TF-controller for Terraform
+* SemVer SourceRef ++ Scalability ++ Security
+* ImageUpdateAutomation - writes back to Git
+* Flagger for Progressive Delivery
+* TF-controller for Terraform
 
 # GitOps without Git
 
