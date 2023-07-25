@@ -1,7 +1,7 @@
-# YouChoose Flux Pitch Deck
+# YouChoose: Flux
 
 subtitle
-:   What's Great About Flux
+:   The Case for Flux (FluxCD.io)
 
 author
 :   Kingdon Barrett
@@ -55,7 +55,7 @@ B(Git Host)
 F((Flux))
 A --> B --> F
 
-L((K8s))
+L((Kubernetes))
 
 F --> L
 ```
@@ -74,6 +74,7 @@ B(Git Host)
 A --> B
 end
 
+subgraph Cluster
 subgraph Flux
 G -- pull --> B
 G((GitRepository))
@@ -82,8 +83,7 @@ G --> K
 K --> G
 end
 
-subgraph Cluster
-L((Kubernetes))
+L((K8s))
 K --> L
 end
 ```
@@ -104,6 +104,7 @@ end
 
 A --> B --> W -- notify --> R
 
+subgraph Cluster
 subgraph Flux
 R((Receiver))
 G -- pull --> B
@@ -114,8 +115,7 @@ K -- pull --> G
 R --> G
 end
 
-subgraph Cluster
-L((Kubernetes))
+L((K8s))
 K --> L
 end
 ```
@@ -123,19 +123,50 @@ end
   relative_height="90"
 }
 
+# What else is new in Flux 2.0?
+
+* SLSA Build Level 3
+* AWS, GCP, Azure Workload Identity for OCI Repos
+* Horizontal scaling and shards for v.large Flux
+
+# Ecosystem
+
+* Community Support (+paid support from Weaveworks, others)
+* Weave GitOps - OSS UI, Enterprise available
+* VSCode (I work on this!) - GitOps Tools
+* You might already use Flux... it's at Microsoft (in AKS/Arc), GitLab, EKS-A
+
+# Community
+
+* Fantastic team of maintainers, contributors, & community
+* Contributor ladder, events calendar (come work with us!)
+
+# Adopters
+
+* Enterprises - SAP, Volvo, RingCentral
+* Partners in Industry - Microsoft, Weaveworks
+* Many companies have trusted Flux for years
+
+# Automation
+
+* ImageUpdateAutomation - great for small dev
+* SemVer Source Automation + Scalability ++ Security
+* Flagger for Progressive Delivery, TF-controller for Terraform
+
 # GitOps without Git
 
 ```mermaid
 flowchart LR
 
 subgraph Internet
-A((User))
+A((C.I.))
 H(OCI Registry)
 W(Webhook)
 end
 
 A --> H --> W -- notify --> R
 
+subgraph Cluster
 subgraph Flux
 R((Receiver))
 O -- pull --> H
@@ -146,8 +177,7 @@ K -- pull --> O
 R --> O
 end
 
-subgraph Cluster
-L((Kubernetes))
+L((K8s))
 K --> L
 end
 ```
@@ -155,11 +185,7 @@ end
   relative_height="90"
 }
 
-# What else is new in Flux 2.0?
-
-# Automation
-
-# How is OCI used?
+# OCI Capabilities and Features
 
 # `OCIRepository`
 
@@ -174,15 +200,18 @@ E --> F[Staging]
 E --> G[Production]
 ```
 {:
-  relative_height="40"
+  relative_height="60"
 }
 
 # Unparalleled Helm support
 
-# Ecosystem
+* Drift correction
+* Stable release is coming - Flux 2.1
 
-# Partners in Industry
+# Call to Action
 
-# Adopters
+* Download VSCode "GitOps Tools for Flux" - check out Prerelease channel!
 
-# Community
+Find the extension from the VSCode marketplaces, also visit [fluxcd.io](https://fluxcd.io)
+
+Read the docs & vote for Flux!
