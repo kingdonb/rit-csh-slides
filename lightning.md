@@ -131,21 +131,21 @@ end
 
 # Ecosystem
 
-* Community Support (+paid support from Weaveworks, others)
-* Weave GitOps - OSS UI, Enterprise available
+* Weave GitOps - OSS UI (+Enterprise "WGE")
 * VSCode (I work on this!) - GitOps Tools
-* You might already use Flux... it's at Microsoft (in AKS/Arc), GitLab, EKS-A
+* You might already use Flux... it's in AKS/Arc, GitLab, EKS-A
 
 # Community
 
+* Community Support (+paid support from Weaveworks, others)
 * Fantastic team of maintainers, contributors, & community
 * Contributor ladder, events calendar (come work with us!)
 
 # Adopters
 
 * Enterprises - SAP, Volvo, RingCentral
-* Partners in Industry - Microsoft, Weaveworks
-* Many companies have trusted Flux for years
+* Partners in Industry - Building products on Flux
+* Companies have trusted Flux for years
 
 # Automation
 
@@ -207,11 +207,14 @@ E --> G[Production]
 
 * Drift correction
 * Stable release is coming - Flux 2.1
+* (I know we already picked ytt! but for those that didn't...)
 
 # Call to Action
 
 * Download VSCode "GitOps Tools for Flux" - check out Prerelease channel!
 
-Find the extension from the VSCode marketplaces, also visit [fluxcd.io](https://fluxcd.io)
+Find the extension from the VSCode marketplaces — also visit us at [fluxcd.io](https://fluxcd.io)
+
+# Call to Action
 
 Read the docs & vote for Flux!
