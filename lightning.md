@@ -26,112 +26,198 @@ end-time
 
 # Flux in 5 Minutes
 
-* Lightning
+# GitOps
 
-# 1. Flux does GitOps
+# Flux does GitOps
 
-Rabbit 3.0.3 does Mermaid diagrams!
+ICYMI
+
+(Diagram showing basic idea of GitOps)
+
+# How
+
+# How Flux does GitOps
+
+(Context Diagram showing User, GitHub, GitRepository, Kustomization, Receiver, and Subscriptions between all of these)
+
+You get independent configuration, control, and observability of those resources via metrics
+
+# GitOps GA
+
+# What is GitOps GA?
+
+GitRepository, Kustomization, v1 APIs
+
+Notifications APIs (`Alert`, `Provider`, `Event`)
+
+# Flux 2.0
+
+# What else is new in Flux 2.0?
+
+* SLSA Build Level 3
+* Workload Identity with OCI
+* Sharding & horizontal scaling
+
+# Automation
+
+* Flux Image Automation
+  * Sequentially numbered images
+* Flux OCIRepository Artifact
+  * `flux push artifact` - whole manifest
+* SemVer Sources Automation
+  * for tagged workloads
+
+# Native Helm
+
+# Unparalleled Helm support
+
+* Helm SDK under the hood
+* Post-render Kustomizations make modding Helm charts easy
+* Drift Correction feature now (behind Feature Gate)
+* `HelmRepository` with oci
+
+# Ecosystem
+
+* You might already be using Flux and not even know it
+* Flux is under the hood:
+  * GitLab Agent, EKS Anywhere, Azure Arc
+
+# Partners in Industry
+
+* Ecosystem of infrastructure vendors supporting Flux
+* `microsoft.flux` Extension, AWS (EKSctl), GitLab, and more
+* ... all embed Flux in their Kubernetes + CD platforms
+
+# Adopters
+
+* Enterprises have been trusting Flux for a long time
+* SAP, RingCentral, Volvo
+* Telecoms, Banks/Financial Institutions, Universities
+* Many institutions have trusted Flux for years
+
+# Ecosystem and Community
+
+* Weave GitOps OSS
+* VSCode GitOps Tools Extension (by Weaveworks)
+* Many Third-party UIs
+
+# Ecosystem and Community
+
+* Shout out to Paid support available
+* Weave GitOps Enterprise
+
+# Context Diagram
 
 ```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
+C4Context
+      title Flux in a Nutshell
+      Enterprise_Boundary(w0, "The Internet") {
+        System(SystemGH, "GitHub", "Hosts Git source repositories")
+        Person(developerA, "Developer A", "A customer of the bank, with personal bank accounts.")
+        Person(developerB, "Developer B")
+        Person_Ext(customerC, "Banking Customer C", "desc")
+
+        Person(customerD, "Banking Customer D", "A customer of the bank, <br/> with personal bank accounts.")
+
+        %% System(SystemAA, "Internet Banking System", "Allows customers to view information about their bank accounts, and make payments.")
+        %% Enterprise_Boundary(b1, "BankBoundary") {
+        %%   SystemDb_Ext(SystemE, "Mainframe Banking System", "Stores all of the core banking information about customers, accounts, transactions, etc.")
+        %%   System_Boundary(b2, "BankBoundary2") {
+        %%     System(SystemA, "Banking System A")
+        %%     System(SystemB, "Banking System B", "A system of the bank, with personal bank accounts. next line.")
+        %%   }
+        %%   System_Ext(SystemC, "E-mail system", "The internal Microsoft Exchange e-mail system.")
+        %%   SystemDb(SystemD, "Banking System D Database", "A system of the bank, with personal bank accounts.")
+        %%   Boundary(b3, "BankBoundary3", "boundary") {
+        %%     SystemQueue(SystemF, "Banking System F Queue", "A system of the bank.")
+        %%     SystemQueue_Ext(SystemG, "Banking System G Queue", "A system of the bank, with personal bank accounts.")
+        %%   }
+        %% }
+      %% }
+
+      %% BiRel(customerA, SystemAA, "Uses")
+      %% BiRel(SystemAA, SystemE, "Uses")
+      %% Rel(SystemAA, SystemC, "Sends e-mails", "SMTP")
+      %% Rel(SystemC, customerA, "Sends e-mails to")
+
+      %% UpdateElementStyle(customerA, $fontColor="red", $bgColor="grey", $borderColor="red")
+      %% UpdateRelStyle(customerA, SystemAA, $textColor="blue", $lineColor="blue", $offsetX="5")
+      %% UpdateRelStyle(SystemAA, SystemE, $textColor="blue", $lineColor="blue", $offsetY="-10")
+      %% UpdateRelStyle(SystemAA, SystemC, $textColor="blue", $lineColor="blue", $offsetY="-40", $offsetX="-50")
+      %% UpdateRelStyle(SystemC, customerA, $textColor="red", $lineColor="red", $offsetX="-50", $offsetY="20")
+
+      %% UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")
 ```
 {:
   relative_height="90"
 }
 
-# Roadmap
+# Mindmap
 
-* The completion of this milestone will be marked by the v2.0.0 release of the Flux distribution and CLI.
+```mermaid
+mindmap
+  root((mindmap))
+    Origins
+      Long history
+      ::icon(fa fa-book)
+      Popularisation
+        British popular psychology author Tony Buzan
+    Research
+      On effectiveness<br/>and features
+      On Automatic creation
+        Uses
+            Creative techniques
+            Strategic planning
+            Argument mapping
+    Tools
+      Pen and paper
+      Mermaid
+```
+{:
+  relative_height="90"
+}
+
+# Mindmap 2
+
+```mermaid
+mindmap
+    id1["`**Root** with
+a second line
+Unicode works too: 🤓 ✅`"]
+      id2["`The dog in **the** hog... a *very long text* that wraps to a new line 🤓 ✅`"]
+      id3[Regular labels still works]
+```
+{:
+  relative_height="90"
+}
+
+# 1. Flux does GitOps
+
+```mermaid
+graph LR;
+  Users-->YAML-->Git;
+  Git-->Flux;
+  Flux-->K8s;
+```
+{:
+  relative_height="90"
+}
+
+# 2. Flux Graduated CNCF
+
 * GitRepository, Kustomization, and Receiver `v1` ✅
+* Micro-service oriented CRDs
 
-# Flux at Scale
+# 3. GitOps GA
 
-Cloud and infrastructure vendors providing Flux-enabled dev environments to customers
-Multi-tenancy at scale
+* GitRepository, Kustomization, and Receiver `v1` ✅
+* Micro-service oriented CRDs
 
-# Sharding
+# 4. Flux GA is loaded with news
 
-Why is Sharding interesting to Zscaler and customers like it?
-(Flux does Sharding)
+SLSA Build Level 3 - compliance and provenance verification, protection against tampering
+GitOps GA Milestone - stable (v1) APIs for Flux’s core GitOps features and notifications API brings added clarity for platform teams, infra vendors about stability & guarantees.
+Workload Identity - integrated with Flux’s OCIRepository sources - security, ease of use wrt handling secrets (use passwordless/ambient environment credentials)
+v2.0 Flux introduces the horizontal sharding & scaling capability for maintaining service level on v. XL Flux installations
+Performance improvements including especially Helm, and Helm-upgrade drift detection
 
-Flux at Zscaler - what do they do?
-
-If you have 10,000+ Flux resources, and some of them are highly active
-How do we avoid starvation? All user SLOs must be met by Flux
-
-# Sharding
-
-Put heavy consumers on their own separate Flux controllers
-(Flux enables Sharding through labels - Horizontally scale)
-
-All user SLOs must be met by Flux - How does sharding help?
-Those heavy-use customers will not starve out their neighbors
-
-# Helm Drift Detection
-
-Why is this important? 
-
-# OCI
-
-You can make your deployment safe - commits that go through CI
-Secure Provenance, Cosign + Sigstore, Security Audits
-
-Flux makes GitOps even safer
-
-# Flux Update
-
-* Flux Core maintainers have built:
-* e2e suites
-* 2.0.0 reps several major upgrades
-
-# Major Upgrades
-
-* An overhaul of Git v2 - CodeCommit, Bitbucket Server
-* Kustomize 5, Helm 3.12, Cosign 2.0
-* controller-runtime v0.15
-* Alpine 3.18+
-
-# Reporting Changes
-
-* Now we report on which CVEs are patched
-  * (even when they don't affect Flux)
-  * It can be a change in a package
-  * Sometimes these CVEs can't be fixed
-* So users will track this if it's important for them
-  * This change helps users fast-tracking "when may I upgrade"
-  * ✅✅✅
-
-# Resource Allocation
-
-* 2.0.0-rc.2 - Flux is now system-cluster-critical.
-
-This priority class will reduce the chances of Flux controllers being evicted
-before other non-critical workloads and prevents the pods from being
-permanently unavailable.
-
-# Testing
-
-* What's missing?
-  Testers 🫵🙋 (You!)
-
-# Flux Bug Scrub
-
-* Flux Bug Scrub - weekly
-  [fluxcd.io/#calendar][]
-
-[fluxcd.io/#calendar]: https://fluxcd.io/#calendar
-
-# Flux Talks
-
-![](images/fluxqr.jpeg "bit.ly/gitopscon2023"){:width='250' height='250'}
-
-[kingdonb/eks-cluster]: https://github.com/kingdonb/eks-cluster
-[kingdonb/taking-bartholo]: https://github.com/kingdonb/taking-bartholo
-[kingdonb/stats-tracker-ghcr]: https://github.com/kingdonb/stats-tracker-ghcr
-[tobiaskuntzsch/kubernetes-operator]: https://gitlab.com/tobiaskuntzsch/kubernetes-operator
-[ManageIQ/kubeclient]: https://github.com/ManageIQ/kubeclient
-[kingdonb/cdcongitopscon2023-slides]: https://github.com/kingdonb/cdcongitopscon2023-slides
