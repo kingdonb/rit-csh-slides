@@ -1,7 +1,7 @@
 # YouChoose: Flux
 
 subtitle
-:   The Case for Flux (FluxCD.io)
+:   The Gong for Flux (FluxCD.io)
 
 author
 :   Kingdon Barrett
