@@ -18,12 +18,6 @@ date
 allotted-time
 :   5m
 
-start-time
-:   2023-07-25T14:00:00-04:00
-
-end-time
-:   2023-07-25T15:30:00-04:00
-
 # Flux in 5 Minutes
 
 # GitOps
@@ -126,14 +120,14 @@ end
 # What else is new in Flux 2.0?
 
 * SLSA Build Level 3
-* AWS, GCP, Azure Workload Identity for OCI Repos
-* Horizontal scaling and shards for v.large Flux
+* {::wait/}AWS, GCP, Azure Workload Identity for OCI Repos
+* {::wait/}Horizontal scaling and shards for v.large Flux
 
 # Ecosystem
 
 * Weave GitOps - OSS UI (+Enterprise "WGE")
-* VSCode (I work on this!) - GitOps Tools
-* You might already use Flux... it's in AKS/Arc, GitLab, EKS-A
+* {::wait/}VSCode (I work on this!) - GitOps Tools
+* {::wait/}You might already use Flux... it's in AKS/Arc, GitLab, EKS-A
 
 # Community
 

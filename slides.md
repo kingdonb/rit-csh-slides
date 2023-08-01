@@ -1,7 +1,7 @@
 # Tech Talk
 
 subtitle
-:   What's New in Flux 2.0.0-rc.5 (since Flux "v2" 0.40)
+:   What's New in Flux 2.0.x
 
 author
 :   Kingdon Barrett
@@ -35,7 +35,7 @@ end-time
 ICYMI:
 
 * Flux Roadmap: [Flux GitOps GA](https://fluxcd.io/roadmap/#flux-gitops-ga-q2-2023)
-* `https://fluxcd.io/roadmap/#flux-gitops-ga-q2-2023`
+* {::wait/}`https://fluxcd.io/roadmap/#flux-gitops-ga-q2-2023`
 
 # Roadmap
 

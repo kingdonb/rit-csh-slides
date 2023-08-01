@@ -9,6 +9,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 gem 'rabbit'
 gem 'rabbit-theme-wwinternalstyle', '1.0.5'
+gem 'vte3'
 # gem 'rabbit-theme-wwinternalstyle', '1.0.6'
 # gem 'rabbit-theme-wwinternalstyle', '1.0.7'
 # gem 'pry'
