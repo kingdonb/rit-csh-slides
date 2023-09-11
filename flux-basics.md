@@ -24,8 +24,15 @@ allotted-time
 
 * Developer just pushes changes to Git
 * {::wait/}They go automatically to Kubernetes
-* {::wait/}...notify us if everything was alright
-* {::wait/}...in case anything changes, GitOps will put it back
+* {::wait/}...notify us if everything went alright
+
+(User Experience should be simple)
+
+# GitOps
+
+* Developer just pushes changes to Git
+* {::wait/}...in case anything changes, GitOps reconciling (Flux) will put it back
+  This is called Drift Correction
 
 (User Experience should be simple)
 
@@ -56,7 +63,7 @@ F --> L
   relative_height="60"
 }
 
-From user perspective
+Easy experience from user perspective
 
 # How Flux does GitOps
 
@@ -86,7 +93,7 @@ end
   relative_height="90"
 }
 
-Flux is in Kubernetes
+Flux is hosted on a Kubernetes cluster
 
 # What is Flux GitOps GA?
 
@@ -120,7 +127,12 @@ end
   relative_height="90"
 }
 
-Stability
+{::wait/}Represents stability for infra builders
+
+# Flux is in Active Development
+
+* GitOps GA Represents stability for infra builders
+* All parts of Flux may change, but GA API parts always remain backward compatible (forever, guaranteed)
 
 # If you're New to Flux
 
