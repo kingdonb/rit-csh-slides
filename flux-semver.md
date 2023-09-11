@@ -25,10 +25,46 @@ allotted-time
 * Works with `GitRepository`
 * {::wait/}`OCIRepository`
 * {::wait/}`HelmRepository`
-* Release-quality software should use SemVer
-* No automation requirement for Git write access to use
+* Release software uses SemVer
+* No automation requirement for Git write access to use - enhanced safety
 
-# Call to Action
+# `GitRepository`
+
+![](images/semver-gitrepo.png){:
+  relative_height="90"
+}
+
+# `OCIRepository`
+
+![](images/semver-ocirepo.png){:
+  relative_height="90"
+}
+
+# `HelmRelease`
+
+![](images/semver-helmrelease1.png){:
+  relative_height="100"
+}
+
+# `HelmRelease`
+
+![](images/semver-helmrelease.png){:
+  relative_height="130"
+}
+
+# Drawbacks
+
+* No commit to revert (rely on Notifications instead)
+* Trusting authors to provide reliable artifacts
+
+# Benefits
+
+* No commits to rebase
+* {::wait/}Rely on Notifications!
+* {::wait/}Trusting authors to provide reliable artifacts!
+* {::wait/}Expectation of quality ++
+
+# Start Using Flux Today
 
 * Download VSCode "GitOps Tools for Flux" - check out Prerelease channel!
 
