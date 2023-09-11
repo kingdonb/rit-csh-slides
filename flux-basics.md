@@ -1,4 +1,4 @@
-# CNCF Webinar
+# CNCF On-Demand Webinar
 
 subtitle
 :   Basics of Flux and GitOps
@@ -122,14 +122,16 @@ end
 
 Stability
 
-# Those are the basics of Flux
+# If you're New to Flux
 
-* New to Flux?
-* {::wait/}https://fluxcd.io/ - Read Docs
-* {::wait/}https://docs.gitops.weave.works/ - Weave GitOps Web UI
-* {::wait/}https://github.com/weaveworks/vscode-gitops-tools - VSCode UI
+* Good entry-points for Flux beginners:
+* [fluxcd.io](https://fluxcd.io/) - Docs, Get Started Guide
+* {::wait/}[docs.gitops.weave.works](https://docs.gitops.weave.works/) - Web UI
+* {::wait/}`github/weaveworks/`[vscode-gitops-tools](https://github.com/weaveworks/vscode-gitops-tools) - Responsive VSCode Editor-UI
 
 # Join Us
 
-* {::wait/}Developed in open under CNCF
-* {::wait/}Flux's RFC process, Roadmap
+* {::wait/}Flux is Developed in open under CNCF
+* {::wait/}Transparent RFCs, Public Roadmap
+* Weekly Dev Meetings - Public (Zoom)
+* Bug Scrub - TZ-IAmA Flux Maintainer
