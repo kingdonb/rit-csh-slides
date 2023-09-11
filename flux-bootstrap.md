@@ -75,11 +75,11 @@ Typically...
 
 * `clusters/my-cluster/`
   * `flux-system/`
-    * `gotk-components` - Flux itself
-    * `gotk-sync` - Business end of Flux
+    * `gotk-components` - Flux itself (controllers)
+    * `gotk-sync` - Business end of Flux (config)
 
-CRDs "flux-system" GitRepository and Kustomization
-represent a bootstrapped Flux installation
+K8s CRs `GitRepo` and `Kustomization`
+represent a running Flux installation
 
 # GitRepository API v1
 
@@ -101,8 +101,8 @@ spec:
 
 # GitRepository
 
-* Reconcile on interval - download the latest
-* Single ref spec - branch main in this case
+* Reconcile interval - download latest
+* Single ref spec - (branch main here)
 * {::wait/}Can have other configuration for auth, signature verification, etc.
 * {::wait/}See the API docs and getting started guide for more details
 
@@ -128,7 +128,7 @@ spec:
 
 # Flux Kustomization
 
-* Not to be confused with Kustomize Overlay
+* Not to be confused with Overlay
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1
@@ -140,29 +140,33 @@ resources:
 
 # Flux Kustomization
 
-* Reconcile on interval - dry run and atomic apply
-* Single ref spec
-* {::wait/}(Optionally) wait for healthy status and error if resources do not become healthy
-* {::wait/}Configurable retry interval when health check fails
-* Observable through CRD Status,
-* {::wait/}Notifications (Alerts)
-* {::wait/}and Events
+* Reconcile interval - dry run, apply
+* Single ref spec - Flux Source (`GitRepo`)
+* {::wait/}(Optionally) wait for healthy, error unless resources go "KStatus Ready"
+* {::wait/}Configurable timeout, retry interval when health check fails
+
+# Flux Kustomization
+
+* Configuration failures are observable through CR API's (via CRD Status),
+* {::wait/}Configurable Notifications (Alerts) and Providers (Slack, Teams, PagerDuty, many others)
+* {::wait/}and native Kubernetes Events
 
 # Bootstrap Components
 
-* gotk-sync - what we just saw
-* gotk-components - Flux itself
+* `gotk-sync` - what we just saw
+* `gotk-components` - Flux itself
+(Impl. via K8s "Controller Runtime")
 
 # Other Storage Backends
 
 * GitOps does not require Git
 * {::wait/}It can be any versioned store
-* {::wait/}Spec.ref need not point to a branch ref
-* {::wait/}Conventionally release-grade software uses SemVer tags
+* {::wait/}Spec.ref can point to a branch ref, or...
+* {::wait/}Release-grade software typically uses SemVer tags everywhere in prod envs
 
-# Flux Also Supports
+# Flux Also Supports (Storage)
 
 * `Bucket` - cloud provider s3-compatible
 * {::wait/}`HelmRepository`
-* {::wait/}`HelmRepository`: type: oci
+* {::wait/}`HelmRepository`: with `type: oci`
 * {::wait/}`OCIRepository`
