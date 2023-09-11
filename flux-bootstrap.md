@@ -108,7 +108,7 @@ spec:
 
 # Kustomization API v1
 
-```
+```yaml
 ---
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
@@ -128,7 +128,7 @@ spec:
 
 # Flux Kustomization
 
-* Not to be confused with Overlay
+* Do not confuse with Kustomize Overlay
 
 ```yaml
 apiVersion: kustomize.config.k8s.io/v1beta1

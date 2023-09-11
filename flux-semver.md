@@ -20,6 +20,8 @@ allotted-time
 
 # Flux Keeps You Up To Date
 
+# Flux encourages Semantic versioning
+
 # Semver Spec Automation
 
 * Works with `GitRepository`

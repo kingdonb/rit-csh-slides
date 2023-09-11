@@ -26,7 +26,7 @@ allotted-time
 * {::wait/}They go automatically to Kubernetes
 * {::wait/}...notify us if everything went alright
 
-(User Experience should be simple)
+{::wait/}(User Experience should be simple)
 
 # GitOps
 
@@ -131,8 +131,8 @@ end
 
 # Flux is in Active Development
 
-* GitOps GA Represents stability for infra builders
-* All parts of Flux may change, but GA API parts always remain backward compatible (forever, guaranteed)
+* GitOps GA Represents stability for infrastructure builders (Microsoft, Weaveworks, VMWare, Pulumi, ...)
+* All parts of Flux may change, but GA API parts always remain backward compatible; forever, guaranteed!
 
 # If you're New to Flux
 
