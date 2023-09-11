@@ -41,25 +41,22 @@ When you write this in your YAML, how does it get updated?
 # {"$imagepolicy": "sintache:example"}
 ```
 
-# Flux Image Policy
+# Flux `ImagePolicy`
 
-![imagepolicy](images/flux-imagepolicy.png)
-{:
-  relative_height="60"
+![](images/flux-imagepolicy.png){:
+  relative_height="100"
 }
 
-# Flux Image Repository
+# Flux `ImageRepository`
 
-![imagerepo](images/flux-imagerepo.png)
-{:
-  relative_height="60"
-}
-
-# Git Updater
-
-![imageauto](images/flux-imageauto.png)
-{:
+![](images/flux-imagerepo.png){:
   relative_height="90"
+}
+
+# Flux `ImageUpdateAutomation`
+
+![](images/flux-imageupdate.png){:
+  relative_height="110"
 }
 
 # Problem
@@ -67,6 +64,10 @@ When you write this in your YAML, how does it get updated?
 * While this could find a place in production...
 * {::wait/}Dev's shouldn't be constantly rebasing our work on automation
 * {::wait/}Git write access is extremely sensitive authorization
+
+# Problem
+
+* While this could find a place in production...
 * {::wait/}Git history is precious
 * {::wait/}Developers sensitive to noise
 
@@ -75,13 +76,36 @@ When you write this in your YAML, how does it get updated?
 * Use Semantic Versioning for releases
 * The version tag is better than a mutable Git ref
 * {::wait/}Tags can be verified in CI before signing
+
+# Solution
+
+* Use Semantic Versioning for releases
+* The version tag is better than a mutable Git ref
 * {::wait/}CI checks can fail/block a release (policy controls!)
+
+# Solution
+
+* Use Semantic Versioning for releases
+* The version tag is better than a mutable Git ref
 * {::wait/}Can work almost identically with Image Automation, or...
 
-# Semver Spec Automation
+# Better Solution
 
+* Use Semver Spec Automation
 * Works with `GitRepository`
-* {::wait/}`OCIRepository`
-* {::wait/}`HelmRepository`
-* Release-quality software should use SemVer
-* No automation requirement for Git write access to use
+* Released software should use SemVer
+* No automation requirement for Git write access to use - safety
+
+# Better Solution
+
+* Use Semver Spec Automation
+* {::wait/}Works with `OCIRepository`
+* Released software should use SemVer
+* No automation requirement for Git write access to use - safety
+
+# Better Solution
+
+* Use Semver Spec Automation
+* {::wait/}Works with `HelmRepository`
+* Released software should use SemVer
+* No automation requirement for Git write access to use - safety
