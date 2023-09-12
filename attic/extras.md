@@ -1,3 +1,18 @@
+# GitOps GA Represents stability for infra builders
+
+# GitOps GA Represents stability
+
+* Flux is in Active Development but GitOps GA Represents stability
+* V.imp to (AWS, Microsoft, Weaveworks, VMWare, Pulumi, others...)
+* All parts of Flux may change, but GA APIs will always remain backward compatible; forever, guaranteed!
+
+# If you're New to Flux
+
+* Good entry-points for Flux beginners:
+* [fluxcd.io](https://fluxcd.io/) - Docs, Get Started Guide
+* {::wait/}[docs.gitops.weave.works](https://docs.gitops.weave.works/) - Web UI
+* {::wait/}`github/weaveworks/`[vscode-gitops-tools](https://github.com/weaveworks/vscode-gitops-tools) - Responsive VSCode Editor-UI
+
 
 # What else is new in Flux 2.0?
 

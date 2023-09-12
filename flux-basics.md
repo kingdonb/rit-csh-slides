@@ -16,31 +16,44 @@ date
 :   2023-09-14
 
 allotted-time
-:   2m
+:   4m
 
 # Flux in 2 Minutes
 
 # GitOps
 
-* Developer just pushes changes to Git
-* {::wait/}They go automatically to Kubernetes
-* {::wait/}...notify us if everything went alright
+* For Beginners: (ELI5)
+* {::wait/}Developer just pushes changes
+* {::wait/}(**new desired state**) to Git
+* {::wait/}They go automatically to **Kubernetes**
 
-{::wait/}(User Experience should be simple)
+(User Experience should be simple)
 
 # GitOps
 
-* Developer just pushes changes to Git
-* {::wait/}...in case anything changes, GitOps reconciling (Flux) will put it back
-  This is called Drift Correction
+* For Beginners: (ELI5)
+* **Developer** just pushes changes
+* (*new desired state*) to _Git_
+* {::wait/}...notify us if everything went alright
 
 (User Experience should be simple)
+
+# GitOps
+
+* Developer just pushes changes to **Git**
+
+* {::wait/}...in case anything changes, <->
+  **GitOps** reconciling (**Flux**)
+  will automatically put it back
+  This is called **Drift Correction**
+
+Dist. from regular imperative CI/CD
 
 # 4 Principles of GitOps
 
 1. Declarative Configuration
 1. {::wait/}Versioned Storage
-1. {::wait/}Pulled into the cluster
+1. {::wait/}Pulled automatically
 1. {::wait/}Reconciled continuously
 
 Detail: [opengitops.dev](https://opengitops.dev) from GitOps WG
@@ -63,7 +76,7 @@ F --> L
   relative_height="60"
 }
 
-Easy experience from user perspective
+Easy Version
 
 # How Flux does GitOps
 
@@ -90,12 +103,12 @@ K --> L
 end
 ```
 {:
-  relative_height="90"
+  relative_height="110"
 }
 
-Flux is hosted on a Kubernetes cluster
+# Flux is hosted on a K8s cluster
 
-# What is Flux GitOps GA?
+# _ 
 
 ```mermaid
 flowchart LR
@@ -124,26 +137,21 @@ K --> L
 end
 ```
 {:
-  relative_height="90"
+  relative_height="110"
+  relative_margin_top="-5"
+  hide_title=true
 }
 
-{::wait/}Represents stability for infra builders
+# Subscriptions in K8s are automatic
 
-# Flux is in Active Development
+# Subscriptions in K8s are negotiated automatically
 
-* GitOps GA Represents stability for infrastructure builders (Microsoft, Weaveworks, VMWare, Pulumi, ...)
-* All parts of Flux may change, but GA API parts always remain backward compatible; forever, guaranteed!
+* On the other hand, across the internet (GitHub, GitLab, Gitea, CodeCommit, ...) webhooks typically need configured
 
-# If you're New to Flux
+# Flux is Community
 
-* Good entry-points for Flux beginners:
-* [fluxcd.io](https://fluxcd.io/) - Docs, Get Started Guide
-* {::wait/}[docs.gitops.weave.works](https://docs.gitops.weave.works/) - Web UI
-* {::wait/}`github/weaveworks/`[vscode-gitops-tools](https://github.com/weaveworks/vscode-gitops-tools) - Responsive VSCode Editor-UI
-
-# Join Us
-
-* {::wait/}Flux is Developed in open under CNCF
+* {::wait/}Flux Developed in open under CNCF
+* **Weekly Dev Meetings** - Public (Zoom)
 * {::wait/}Transparent RFCs, Public Roadmap
-* Weekly Dev Meetings - Public (Zoom)
-* Bug Scrub - TZ-IAmA Flux Maintainer
+
+[fluxcd.io/#calendar](https://fluxcd.io/#calendar)
