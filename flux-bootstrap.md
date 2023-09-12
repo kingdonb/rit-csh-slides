@@ -20,67 +20,6 @@ allotted-time
 
 # Flux Manages Itself
 
-# GitOps
-
-If this is GitOps...
-
-```mermaid
-flowchart LR
-
-A((Dev))
-B(Git)
-A --> B
-
-L((K8s))
-
-B --> L
-```
-{:
-  relative_height="60"
-}
-
-Detail: [opengitops.dev](https://opengitops.dev) from GitOps WG
-
-# Flux does GitOps
-
-And Flux does GitOps...
-
-```mermaid
-flowchart LR
-
-A((User))
-B(Git Host)
-F((Flux))
-A --> B --> F
-
-L((Kubernetes))
-
-F --> L
-```
-{:
-  relative_height="60"
-}
-
-# How does Flux get on the cluster?
-
-Typically...
-
-* ???
-* {::wait/}It goes into Git
-* {::wait/}(There are other ways as we will see)
-
-# Bootstrap
-
-# Bootstrap Decomposed
-
-* `clusters/my-cluster/`
-  * `flux-system/`
-    * `gotk-components` - Flux itself (controllers)
-    * `gotk-sync` - Business end of Flux (config)
-
-K8s CRs `GitRepo` and `Kustomization`
-represent a running Flux installation
-
 # GitRepository API v1
 
 ```yaml
@@ -156,17 +95,3 @@ resources:
 * `gotk-sync` - what we just saw
 * `gotk-components` - Flux itself
 (Impl. via K8s "Controller Runtime")
-
-# Other Storage Backends
-
-* GitOps does not require Git
-* {::wait/}It can be any versioned store
-* {::wait/}Spec.ref can point to a branch ref, or...
-* {::wait/}Release-grade software typically uses SemVer tags everywhere in prod envs
-
-# Flux Also Supports (Storage)
-
-* `Bucket` - cloud provider s3-compatible
-* {::wait/}`HelmRepository`
-* {::wait/}`HelmRepository`: with `type: oci`
-* {::wait/}`OCIRepository`

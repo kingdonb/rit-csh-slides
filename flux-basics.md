@@ -51,10 +51,10 @@ Dist. from regular imperative CI/CD
 
 # 4 Principles of GitOps
 
-1. Declarative Configuration
-1. {::wait/}Versioned Storage
-1. {::wait/}Pulled automatically
-1. {::wait/}Reconciled continuously
+1. **Declarative** Configuration
+1. {::wait/}*Versioned* Storage
+1. {::wait/}Pulled _automatically_
+1. {::wait/}Reconciled _continuously_
 
 Detail: [opengitops.dev](https://opengitops.dev) from GitOps WG
 
@@ -146,7 +146,8 @@ end
 
 # Subscriptions in K8s are negotiated automatically
 
-* On the other hand, across the internet (GitHub, GitLab, Gitea, CodeCommit, ...) webhooks typically need configured
+* On the other hand, across the internet (GitHub, GitLab, Gitea, CodeCommit, ...)
+* {::wait/}Webhooks typically need configured
 
 # Flux is Community
 
@@ -155,3 +156,110 @@ end
 * {::wait/}Transparent RFCs, Public Roadmap
 
 [fluxcd.io/#calendar](https://fluxcd.io/#calendar)
+
+# Flux Manages Itself
+
+# GitOps
+
+If this is GitOps...
+
+```mermaid
+flowchart LR
+
+A((Dev))
+B(Git)
+A --> B
+
+L((K8s))
+
+B --> L
+```
+{:
+  relative_height="60"
+}
+
+# Flux does GitOps
+
+And Flux does GitOps...
+
+```mermaid
+flowchart LR
+
+A((User))
+B(Git Host)
+F((Flux))
+A --> B --> F
+
+L((Kubernetes))
+
+F --> L
+```
+{:
+  relative_height="60"
+}
+
+# How does Flux get installed?
+
+```mermaid
+flowchart LR
+
+A((User))
+B(Git Host)
+C(("Operator (??)"))
+F((Flux))
+L((Kubernetes))
+
+A --> B --> F --> L
+F --> C -->|Install?| B
+```
+{:
+  relative_height="90"
+}
+
+# How does Flux get installed?
+
+??? That's up to you
+
+* {::wait/}?: copy Flux into Git
+* {::wait/}^- Typically: `flux bootstrap` does this
+
+# What is Bootstrap?
+
+# Bootstrap Decomposed
+
+* `clusters/my-cluster/`
+  * `flux-system/`
+    * `gotk-components` - Flux itself (controllers)
+    * _`gotk-sync`_ - Business end of Flux (_config_)
+
+K8s CRs `GitRepo` and `Kustomization`
+represent a running Flux installation
+
+# Bootstrap Decomposed
+
+* Bootstrap also sets up some secrets
+* Repository secrets: usually SSH key
+* {::wait/}Read-only by default,
+* {::wait/}(but needs write access to bootstrap)
+
+# How does Flux get installed?
+
+* *?:* copy Flux controllers into _Git_? *no*
+* {::wait/}Other possibility: Flux is **managed by**
+  GitOps only some other way ... **how?**
+
+Another **Operator** can install Flux!
+
+# Flux as OCI Artifact
+
+{::wait/}You do not need to copy Flux into Git
+
+* (controllers **released** as OCI artifact){::wait/}
+
+`oci://ghcr.io/fluxcd/
+  flux-manifests:v2.1.0`
+
+* {::wait/}`OCIRepository` is another Flux
+**source `Kind`** - more about that later
+
+# Demo

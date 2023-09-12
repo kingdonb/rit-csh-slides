@@ -1,3 +1,17 @@
+# Other Storage Backends
+
+* GitOps does not require Git
+* {::wait/}It can be any versioned store
+* {::wait/}Spec.ref can point to a branch ref, or...
+* {::wait/}Release-grade software typically uses SemVer tags everywhere in prod envs
+
+# Flux Also Supports (Storage)
+
+* `Bucket` - cloud provider s3-compatible
+* {::wait/}`HelmRepository`
+* {::wait/}`HelmRepository`: with `type: oci`
+* {::wait/}`OCIRepository`
+
 # GitOps GA Represents stability for infra builders
 
 # GitOps GA Represents stability
