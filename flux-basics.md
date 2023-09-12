@@ -16,7 +16,7 @@ date
 :   2023-09-14
 
 allotted-time
-:   4m
+:   5m
 
 # Flux in 2 Minutes
 
