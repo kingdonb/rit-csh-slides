@@ -246,7 +246,7 @@ represent a running Flux installation
 
 * Bootstrap also sets up some secrets
 * Repository secrets: usually SSH key
-* {::wait/}Read-only by default,
+* {::wait/}Read-only by default, probably private
 * {::wait/}(but needs write access to bootstrap)
 
 # How does Flux get installed?
