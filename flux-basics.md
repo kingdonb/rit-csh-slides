@@ -157,6 +157,13 @@ end
 
 [fluxcd.io/#calendar](https://fluxcd.io/#calendar)
 
+# Flux is Supported
+
+![](images/contactme.png){:
+  relative_height="120"
+  relative_margin_top="3"
+}
+
 # Flux Manages Itself
 
 # GitOps
