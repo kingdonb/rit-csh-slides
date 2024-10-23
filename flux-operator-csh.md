@@ -4,7 +4,7 @@ subtitle
 :   Using Flux on OpenShift
 
 author
-:   Kingdon Barrett
+:   Kingdon Barrett (yebyen)
 
 institution
 :   Computer Science House

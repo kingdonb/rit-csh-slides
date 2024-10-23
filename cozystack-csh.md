@@ -4,7 +4,7 @@ subtitle
 :   Bare-Metal Talos PaaS
 
 author
-:   Kingdon Barrett
+:   Kingdon Barrett (yebyen)
 
 institution
 :   Computer Science House
